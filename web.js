@@ -16,7 +16,8 @@ var leerArchivo = function(archivo) {
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(leerArchivo('/Users/gustavogte/Google Drive/Actual_Hoy/StartUp/aws1/bitstarter/index.html'));
+    response.send('Hola mundo 3');
+ // response.send(leerArchivo('/Users/gustavogte/Google Drive/Actual_Hoy/StartUp/aws1/bitstarter/index.html'));
 });
 
 var port = process.env.PORT || 5000;
