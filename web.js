@@ -17,10 +17,10 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
  //   response.send('Hola mundo 3');
-  response.send(fs.readFile('./index.html', function (err, data){
+  fs.readFile('./index.html', function (err, data){
   if (err) throw err;
-  data}).toString();
-});
+  response.send(data.toString());
+  });
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
