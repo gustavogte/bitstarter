@@ -24,12 +24,11 @@ References:
 var fs = require('fs');
 var program = require('commander');
 var cheerio = require('cheerio');
-// added for hw3
 var rest = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var URL_DEFAULT = "url.file"
-var OUT_FILE_NAME = "./outputfile.html"
+var URL_DEFAULT = "url.file";
+var OUT_FILE_NAME = "./outputfile.html";
 
 
 var assertFileExists = function(infile) {
@@ -75,21 +74,11 @@ if(require.main == module) {
     program
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
-        .option('-u, --url', 'Url of html file')
+        .option('-u, --url <url>', 'Url of html file')
         .parse(process.argv);
-/*
-
-    console.log("After parsing, process.argv is = " + process.argv[5]);
-    console.log("After parsing, program is = " + program);
-    console.log("After parsing, program.url is = " + program.url);
-    console.log("After parsing, program.file is = " + program.file);
-    console.log("After parsing, program.checks = " + program.checks);a
-*/
 //    console.log("After parsing, program.url is = " + program.url);
-   if(program.url)
-   {
 
-       //rest.get('https://github.com/madhavank/bitstarter/blob/master/index.html').on('complete',function(result) {
+if(program.url) {
        rest.get(process.argv[5]).on('complete',function(result) {
 	   fs.writeFileSync(OUT_FILE_NAME, result);
 	   program.file = OUT_FILE_NAME ;
@@ -114,5 +103,3 @@ if(require.main == module) {
     exports.checkHtmlFile = checkHtmlFile;
 }
 
-
-//rest.get(apiurl).on('complete', response2console);
