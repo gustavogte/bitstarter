@@ -10,7 +10,7 @@ app.get('/', function(request, response) {
 	    response.send(data.toString());
 	}
     );
-    // reponse.send('Hello World 2!')
+    // reponse.send('Hello World 2!') desde awshost 1
 });
     
 var port = process.env.PORT || 5000;
