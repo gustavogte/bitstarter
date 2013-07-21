@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
     var fs = require ('fs'); // importar modulo para leer archivos              
-    fs.readFile('index.html',
+    fs.readFile(htmlfile,
         function (err, data){
             if (err) throw err;
             response.send(data.toString());
