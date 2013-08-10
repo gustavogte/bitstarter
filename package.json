@@ -1,0 +1,20 @@
+{
+  "name": "bitstarter",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon web.js"
+  },
+  "dependencies": {
+    "express": "2.5.x",
+    "restler": "2.0.1",
+    "commander": "1.2.0",
+    "cheerio": "0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
